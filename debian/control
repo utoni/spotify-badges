@@ -1,0 +1,13 @@
+Source: spotify-badges
+Section: web
+Priority: optional
+Maintainer: Toni Uhlig <toni@impl.cc>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Homepage: https://github.com/utoni/spotify-badges
+
+Package: spotify-badges
+Architecture: any
+Depends: git, ${shlibs:Depends}, ${misc:Depends}
+Description: Spotify Badges - Generate spotify SVG web badges.

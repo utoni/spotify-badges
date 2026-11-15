@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+export CARGO_HOME := $(CURDIR)/debian/cargo
+export CARGO_TARGET_DIR := $(CURDIR)/target
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	rm -rf target debian/cargo
+	cargo build --release --locked
+
+override_dh_auto_install:
+	install -D -m0644 spotify-badges.service debian/spotify-badges/usr/lib/systemd/system/spotify-badges.service
+	install -D -m0755 target/release/spotify-badges debian/spotify-badges/usr/bin/spotify-badges
+
+override_dh_auto_clean:
+	rm -rf target debian/cargo

@@ -1,4 +1,4 @@
-# spotify-badges (Rust)
+# spotify-badges
 
 Inspired by [akellbl4/spotify-badge](https://github.com/akellbl4/spotify-badge) but written in Rust, usable within self-hosted environments.
 
@@ -8,7 +8,7 @@ Inspired by [akellbl4/spotify-badge](https://github.com/akellbl4/spotify-badge) 
 - `GET /api/top-artists.svg`: SVG badge with your top 5 artists
 - `GET /api/top-tracks.svg`: SVG badge with your top 5 most played tracks
   (both accept `?time_range=short_term|medium_term|long_term`, default `medium_term`)
-- `GET /api/auth?secret=$AUTH_SECRET`: Spotify OAuth flow; the new refresh token is activated and persisted, no restart needed
+- `GET /api/auth?secret={AUTH_SECRET}`: Spotify OAuth flow; the new refresh token is activated and persisted, no restart needed
 - `GET /`: redirects to the project page
 
 ## Config (env vars, see `.env.example`)
